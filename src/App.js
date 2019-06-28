@@ -14,9 +14,8 @@ function App() {
     <Root>
       <nav>
         <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/new">New</Link>
         <Link to="/tools">Tooling</Link>
+        <Link to="/countries">Countries</Link>
         <Link to="/dynamic">Dynamic</Link>
       </nav>
       <div className="content">

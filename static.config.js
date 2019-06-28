@@ -3,21 +3,18 @@ import axios from 'axios'
 
 export default {
   getRoutes: async () => {
-    const { data: posts } = await axios.get(
-      'https://jsonplaceholder.typicode.com/posts'
-    )
-
+    const { data: countries } = await axios.get('https://restcountries.eu/rest/v2/all')
     return [
       {
-        path: '/blog',
+        path: '/countries',
         getData: () => ({
-          posts,
+          countries,
         }),
-        children: posts.map(post => ({
-          path: `/post/${post.id}`,
-          template: 'src/containers/Post',
+        children: countries.map(country => ({
+          path: `/${country.name}`,
+          template: 'src/containers/Country',
           getData: () => ({
-            post,
+            country,
           }),
         })),
       },
