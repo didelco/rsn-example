@@ -11,7 +11,7 @@ export default {
           countries,
         }),
         children: countries.map(country => ({
-          path: `/${country.name}`,
+          path: `/${country.alpha3Code}`,
           template: 'src/containers/Country',
           getData: () => ({
             country,
